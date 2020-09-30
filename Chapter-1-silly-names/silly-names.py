@@ -43,13 +43,9 @@ while True:
         firstName = random.choice(first)
         lastName = random.choice(last)
         print("You must be {} {}".format(firstName, lastName), file=sys.stderr)
-        sleep(3)
+        sleep(2)
 
-        playAgain = input("\n\nWould you like to play again? (y/n) :")
-        while ((playAgain != "n") or (playAgain != "y")):
-                if playAgain.lower() == "n":
-                        break
-                elif playAgain.lower() != "y":
-                        playAgain = input("That's not right, please select yes or no (y/n) :")
-                else:
-                        break
+        playAgain = input("\n\nPress enter to try again, or 'q' to quit :")
+        if playAgain.lower() == "q":
+                print("Thanks for playing!")
+                break
