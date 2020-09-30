@@ -7,11 +7,11 @@
 # have the option to replay once a name is given.
 
 import sys, random
-
+from time import sleep
 first =('Baby Oil', 'Bad News', 'Big Burps', "Bill 'Beenie-Weenie'",
         "Bob 'Stinkbug'", 'Bowel Noises', 'Boxelder', "Bud 'Lite' ",
         'Butterbean', 'Buttermilk', 'Buttocks', 'Chad', 'Chesterfield',
-        'Chewy', 'Chigger', 'Cinnabuns', 'Cleet', 'Cornbread', 'Crab Meat',
+        'Chewy', 'Chungis', 'Cinnabuns', 'Cleet', 'Cornbread', 'Crab Meat',
         'Crapps', 'Dark Skies', 'Dennis Clawhammer', 'Dicman', 'Elphonso',
         'Fancypants', 'Figgs', 'Foncy', 'Gootsy', 'Greasy Jim', 'Huckleberry',
         'Huggy', 'Ignatious', 'Jimbo', "Joe 'Pottin Soil'", 'Johnny',
@@ -38,3 +38,18 @@ last = ('Appleyard', 'Bigmeat', 'Bloominshine', 'Boogerbottom',
         'Turnipseed', 'Vinaigrette', 'Walkingstick', 'Wallbanger', 'Weewax',
         'Weiners', 'Whipkey', 'Wigglesworth', 'Wimplesnatch', 'Winterkorn',
         'Woolysocks')
+
+while True:
+        firstName = random.choice(first)
+        lastName = random.choice(last)
+        print("You must be {} {}".format(firstName, lastName), file=sys.stderr)
+        sleep(3)
+
+        playAgain = input("\n\nWould you like to play again? (y/n) :")
+        while ((playAgain != "n") or (playAgain != "y")):
+                if playAgain.lower() == "n":
+                        break
+                elif playAgain.lower() != "y":
+                        playAgain = input("That's not right, please select yes or no (y/n) :")
+                else:
+                        break
