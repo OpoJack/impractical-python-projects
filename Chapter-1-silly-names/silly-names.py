@@ -39,13 +39,24 @@ last = ('Appleyard', 'Bigmeat', 'Bloominshine', 'Boogerbottom',
         'Weiners', 'Whipkey', 'Wigglesworth', 'Wimplesnatch', 'Winterkorn',
         'Woolysocks')
 
+intro = ('Coming in at seven billion pounds...' , "You're gonna like this folks, it's..." ,
+        "Introducing, for the first time since the accident..." , "I should've known it was you,",
+        "The powerful, the pleasurable, the indestructable", "From the highest mountains, it's",
+        "By Odin's beard! You must be", "OMG IT'S", "The returning champion enters the ring once more...it's",
+        "Great Scott! That's", "Oh my gosh oh my gosh oh my gosh I'm your biggest fan", "Holy shit it's",
+        "It's you...what are you doing here")
+
+outro = ("Can I have your signature!?" , "Inconceivable!" , "Fly, you fool!")
+
 while True:
         firstName = random.choice(first)
         lastName = random.choice(last)
-        print("You must be {} {}".format(firstName, lastName), file=sys.stderr)
+        introduction = random.choice(intro)
+        outroduction = random.choice(outro)
+        print("\n{} {} {}! {}".format(introduction, firstName, lastName, outroduction), file=sys.stderr)
         sleep(2)
 
-        playAgain = input("\n\nPress enter to try again, or 'q' to quit :")
+        playAgain = input("\n***Press enter to try again, or 'q' to quit :")
         if playAgain.lower() == "q":
                 print("Thanks for playing!")
                 break
